@@ -1,21 +1,21 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>com.alexkuz.ComposeTeamplates</id>
+    <id>com.alexkuz.composeteamplates</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>ComposeTeamplates</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="kuznetsov356@gmail.com">AlexKuz</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    description description description description
+    description description description description
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -27,4 +27,17 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+
+    <actions>
+        <group
+                id="MyDemoActionGroup"
+                description="Demo action group">
+            <action
+                    id="com.alexkuz.composeteamplates.MyDemoAction"
+                    class="com.alexkuz.composeteamplates.DemoAction"
+                    text="Demo Action"
+                    description="Demo action example"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </group>
+    </actions>
 </idea-plugin>
