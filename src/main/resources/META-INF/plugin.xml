@@ -31,15 +31,33 @@
     </extensions>
 
     <actions>
+        <action
+                id="DemoAction"
+                class="com.alexkuz.composeteamplates.DemoAction"
+                text="Marsel"
+                description="Action ref desc"/>
         <group
-                id="MyDemoActionGroup"
-                description="Demo action group">
+                id="MyDemoActionGroup.TopMenu"
+                text="_MyPlugin"
+                description="Demo action group"
+                popup="true">
+
+            <reference ref="DemoAction"/>
+            <separator/>
             <action
                     id="com.alexkuz.composeteamplates.MyDemoAction"
                     class="com.alexkuz.composeteamplates.DemoAction"
-                    text="Demo Action"
+                    text="Nazirov"
                     description="Demo action example"/>
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="ViewMenu"/>
+        </group>
+        <group
+                id="MySecondDemoActionGroup"
+                text="Second Group"
+                description="Second Demo action group"
+                popup="true">
+            <add-to-group group-id="MyDemoActionGroup.TopMenu" anchor="last"/>
+            <reference ref="DemoAction"/>
         </group>
     </actions>
 </idea-plugin>
