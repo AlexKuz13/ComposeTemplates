@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 class TrelloAction: AnAction() {
 
     override fun actionPerformed(p0: AnActionEvent) {
-        TODO("Not yet implemented")
+        val dialog = TrelloForm(p0.project!!, TrelloInjectorImpl())
+        dialog.show()
     }
 }
