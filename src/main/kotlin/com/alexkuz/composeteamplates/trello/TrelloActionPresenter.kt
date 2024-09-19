@@ -6,17 +6,13 @@ interface TrelloActionPresenter {
 }
 
 class TrelloActionPresenterImpl(
-    val view: TrelloFormView,
-    val repository: TrelloRepository,
-): TrelloActionPresenter {
-
-    val fromListId = ""
-    val toListId = ""
-    val apiKey = ""
-    val token = ""
+    private val view: TrelloFormView,
+    private val repository: TrelloRepository,
+    private val state: TrelloState
+) : TrelloActionPresenter {
 
     override fun loadCards() {
-        repository.getCards(fromListId, apiKey, token)
+        repository.getCards(state.fromListId, state.apiKey, state.token)
             .subscribe(
                 { cards -> view.showCards(cards) },
                 { error -> view.error(error) }
@@ -24,7 +20,7 @@ class TrelloActionPresenterImpl(
     }
 
     override fun moveCard(card: Card) {
-        repository.moveCard(card.id, toListId, apiKey, token)
+        repository.moveCard(card.id, state.toListId, state.apiKey, state.token)
             .subscribe(
                 { view.success() },
                 { error -> view.error(error) }

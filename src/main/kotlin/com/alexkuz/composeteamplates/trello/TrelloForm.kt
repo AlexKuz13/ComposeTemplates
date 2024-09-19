@@ -15,7 +15,7 @@ import javax.swing.JComponent
 import javax.swing.JTextPane
 
 class TrelloForm(
-    val project: Project,
+    private val project: Project,
     trelloInjector: TrelloInjector,
 ) : DialogWrapper(project), TrelloFormView {
 
@@ -28,7 +28,7 @@ class TrelloForm(
     }
 
     private val presenter: TrelloActionPresenter by lazy {
-        trelloInjector.trelloActionPresenter(this)
+        trelloInjector.trelloActionPresenter(this, project)
     }
 
     init {

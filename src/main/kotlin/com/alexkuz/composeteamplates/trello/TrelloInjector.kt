@@ -1,5 +1,7 @@
 package com.alexkuz.composeteamplates.trello
 
+import com.alexkuz.composeteamplates.trello.services.TrelloService
+import com.intellij.openapi.project.Project
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -9,7 +11,9 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 interface TrelloInjector {
     val repository: TrelloRepository
     val trelloServiceApi: TrelloServiceApi
-    fun trelloActionPresenter(view: TrelloFormView): TrelloActionPresenter
+
+    fun trelloState(project: Project): TrelloState
+    fun trelloActionPresenter(view: TrelloFormView, project: Project): TrelloActionPresenter
 }
 
 class TrelloInjectorImpl: TrelloInjector {
@@ -30,7 +34,11 @@ class TrelloInjectorImpl: TrelloInjector {
         TrelloRepositoryImpl(trelloServiceApi)
     }
 
-    override fun trelloActionPresenter(view: TrelloFormView): TrelloActionPresenter {
-        return TrelloActionPresenterImpl(view, repository)
+    override fun trelloState(project: Project): TrelloState {
+        return TrelloService.getInstance(project).state
+    }
+
+    override fun trelloActionPresenter(view: TrelloFormView, project: Project): TrelloActionPresenter {
+        return TrelloActionPresenterImpl(view, repository, trelloState(project))
     }
 }
