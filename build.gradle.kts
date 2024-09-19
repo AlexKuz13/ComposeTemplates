@@ -11,6 +11,15 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.11.0")
+    implementation("io.reactivex.rxjava2:rxjava:2.2.19")
+    implementation("com.github.akarnokd:rxjava2-swing:0.3.7")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+}
+
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {

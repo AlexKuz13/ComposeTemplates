@@ -5,4 +5,3 @@ interface TrelloFormView {
     fun success()
     fun error(error: Throwable)
 }
-class Card

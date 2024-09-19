@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello arch">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello load cards" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +33,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Interface" />
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -73,6 +67,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -91,6 +88,9 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "281",
     "git-widget-placeholder": "example",
     "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.customizations"
   }
 }]]></component>
@@ -159,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726661987908</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="trello load cards">
+      <option name="closed" value="true" />
+      <created>1726740094133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726740094133</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +181,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="example" />
                       </list>
                     </value>
                   </entry>
@@ -191,6 +199,7 @@
     <MESSAGE value="add demo action" />
     <MESSAGE value="change idea to android studio" />
     <MESSAGE value="trello arch" />
-    <option name="LAST_COMMIT_MESSAGE" value="trello arch" />
+    <MESSAGE value="trello load cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="trello load cards" />
   </component>
 </project>
