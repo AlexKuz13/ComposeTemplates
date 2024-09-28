@@ -28,6 +28,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
             <!-- Add your extensions here -->
+            <projectConfigurable instance="com.alexkuz.composeteamplates.trello.settings.TrelloSettings" />
             <!--<projectService serviceImplementation="com.alexkuz.composeteamplates.trello.services.TrelloService" />-->
     </extensions>
 

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello load cards">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/services/TrelloService.kt" afterDir="false" />
+    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello state">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/settings/TrelloSettings.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloActionPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloActionPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloInjector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloInjector.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloAction.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/TrelloModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
@@ -87,21 +85,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.ComposeTeamplates [setupDependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Run Plugin.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;281&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;example&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build ComposeTeamplates.executor": "Run",
+    "Gradle.ComposeTeamplates [setupDependencies].executor": "Run",
+    "Gradle.Run Plugin.executor": "Run",
+    "JUnit.All in ComposeTeamplates.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "281",
+    "git-widget-placeholder": "example",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.customizations"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.alexkuz.composeteamplates.trello" />
@@ -109,6 +109,21 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="All in ComposeTeamplates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ComposeTeamplates" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in ComposeTeamplates" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -183,7 +198,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726740220737</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="trello state">
+      <option name="closed" value="true" />
+      <created>1726773747226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726773747226</updated>
+    </task>
+    <task id="LOCAL-00010" summary="trello state">
+      <option name="closed" value="true" />
+      <created>1726773785321</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726773785321</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +247,7 @@
     <MESSAGE value="change idea to android studio" />
     <MESSAGE value="trello arch" />
     <MESSAGE value="trello load cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="trello load cards" />
+    <MESSAGE value="trello state" />
+    <option name="LAST_COMMIT_MESSAGE" value="trello state" />
   </component>
 </project>
