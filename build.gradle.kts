@@ -18,13 +18,18 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxjava:2.2.19")
     implementation("com.github.akarnokd:rxjava2-swing:0.3.7")
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    testImplementation("junit:junit:4.13")
+    testImplementation("org.mockito:mockito-core:3.4.6")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+    testImplementation("org.assertj:assertj-core:3.16.1")
+    testImplementation("org.assertj:assertj-swing-junit:3.9.2")
 }
 
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     localPath = "/Applications/Android Studio.app/Contents"
-   // plugins.set(listOf("Kotlin", "Android"))
+    // plugins.set(listOf("Kotlin", "Android"))
 }
 
 tasks {
