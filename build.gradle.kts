@@ -28,6 +28,7 @@ dependencies {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
+    plugins.set(listOf("android"))
     localPath = "/Applications/Android Studio.app/Contents"
     // plugins.set(listOf("Kotlin", "Android"))
 }
