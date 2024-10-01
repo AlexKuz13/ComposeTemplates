@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello settings" />
+    <list default="true" id="3b9490c8-c8af-40c9-b440-2a3b6e7effb2" name="Changes" comment="trello ui tests">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/alexkuz/composeteamplates/trello/utils/StringsBundle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/strings.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/strings_ru.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +39,9 @@
         <option value="Kotlin Data Class" />
         <option value="Class" />
         <option value="Kotlin Interface" />
+        <option value="JUnit4 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -68,7 +74,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -79,32 +85,140 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build ComposeTeamplates.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ComposeTeamplates [setupDependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Run Plugin.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in ComposeTeamplates.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;281&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;example&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build ComposeTeamplates.executor": "Run",
+    "Gradle.ComposeTeamplates [setupDependencies].executor": "Run",
+    "Gradle.Run Plugin.executor": "Run",
+    "Gradle.TrelloActionPresenterImplTest.whenLoadCardsExecutedThenShowCardsIsCalled.executor": "Run",
+    "Gradle.TrelloActionPresenterImplTest.whenLoadCardsExecutedWIthErrorThenErrorIsCalled.executor": "Run",
+    "Gradle.TrelloFormTest.executor": "Run",
+    "Gradle.TrelloFormTest.whenDialogShownThenFirstCardSelectedShowsTheCorrectDescription.executor": "Run",
+    "JUnit.All in ComposeTeamplates.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "281",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "git-widget-placeholder": "example",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.customizations"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.alexkuz.composeteamplates.trello" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.alexkuz.composeteamplates.trello" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.Run Plugin">
+    <configuration name="TrelloActionPresenterImplTest.whenLoadCardsExecutedThenShowCardsIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.alexkuz.composeteamplates.trello.TrelloActionPresenterImplTest.whenLoadCardsExecutedThenShowCardsIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TrelloActionPresenterImplTest.whenLoadCardsExecutedWIthErrorThenErrorIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.alexkuz.composeteamplates.trello.TrelloActionPresenterImplTest.whenLoadCardsExecutedWIthErrorThenErrorIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TrelloFormTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.alexkuz.composeteamplates.trello.TrelloFormTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TrelloFormTest.whenDialogShownThenFirstCardSelectedShowsTheCorrectDescription" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.alexkuz.composeteamplates.trello.TrelloFormTest.whenDialogShownThenFirstCardSelectedShowsTheCorrectDescription&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="All in ComposeTeamplates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ComposeTeamplates" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,6 +229,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TrelloFormTest.whenDialogShownThenFirstCardSelectedShowsTheCorrectDescription" />
+        <item itemvalue="Gradle.TrelloFormTest" />
+        <item itemvalue="Gradle.TrelloActionPresenterImplTest.whenLoadCardsExecutedWIthErrorThenErrorIsCalled" />
+        <item itemvalue="Gradle.TrelloActionPresenterImplTest.whenLoadCardsExecutedThenShowCardsIsCalled" />
         <item itemvalue="JUnit.All in ComposeTeamplates" />
       </list>
     </recent_temporary>
@@ -216,7 +334,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727555535891</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="trello unit tests">
+      <option name="closed" value="true" />
+      <created>1727595872227</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1727595872227</updated>
+    </task>
+    <task id="LOCAL-00013" summary="trello ui tests">
+      <option name="closed" value="true" />
+      <created>1727598369367</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1727598369367</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,6 +385,8 @@
     <MESSAGE value="trello load cards" />
     <MESSAGE value="trello state" />
     <MESSAGE value="trello settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="trello settings" />
+    <MESSAGE value="trello unit tests" />
+    <MESSAGE value="trello ui tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="trello ui tests" />
   </component>
 </project>
