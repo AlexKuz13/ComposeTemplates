@@ -1,4 +1,4 @@
-package com.alexkuz.composeteamplates
+package com.alexkuz.composetemplates
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

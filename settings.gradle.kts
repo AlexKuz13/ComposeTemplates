@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "ComposeTeamplates"
+rootProject.name = "ComposeTemplates"
