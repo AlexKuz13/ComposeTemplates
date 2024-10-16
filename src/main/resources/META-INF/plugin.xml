@@ -22,6 +22,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.kotlin</depends>
+    <depends>org.jetbrains.android</depends>
     <depends>com.intellij.modules.androidstudio</depends>
 
     <!-- Extension points defined by the plugin.
@@ -30,6 +31,10 @@
             <!-- Add your extensions here -->
             <projectConfigurable instance="com.alexkuz.composeteamplates.trello.settings.TrelloSettings" />
             <!--<projectService serviceImplementation="com.alexkuz.composeteamplates.trello.services.TrelloService" />-->
+    </extensions>
+
+    <extensions defaultExtensionNs="com.android">
+        <tools.idea.wizard.template.wizardTemplateProvider implementation="com.alexkuz.composeteamplates.CustomWizardTemplateProvider" />
     </extensions>
 
     <actions>
