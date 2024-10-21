@@ -31,6 +31,10 @@
 
     </extensions>
 
+    <extensions defaultExtensionNs="com.android">
+        <tools.idea.wizard.template.wizardTemplateProvider implementation="com.alexkuz.composetemplates.default.ComposableTemplateProvider" />
+    </extensions>
+
     <actions>
         <group
                 id="MyDemoActionGroup"
