@@ -28,7 +28,8 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <projectConfigurable instance="com.alexkuz.composetemplates.generator.settings.TemplateGeneratorSettings"
+                             displayName="Template Generator Settings"/>
     </extensions>
 
     <extensions defaultExtensionNs="com.android">
