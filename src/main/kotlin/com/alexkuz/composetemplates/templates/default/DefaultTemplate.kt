@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.default
+package com.alexkuz.composetemplates.templates.default
 
 import com.alexkuz.composetemplates.blocks.getButton
 import com.alexkuz.composetemplates.blocks.getPreview
@@ -17,21 +17,21 @@ fun defaultTemplate(
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
-${getDefaultTemplateImports()} 
+${getDefaultTemplateImports()}
 
 @Composable
-fun ${composableName}() {
+fun $composableName() {
     /**
     Here you can write code related to the viewModel, various states, side effects.
      */
 
-    ${composableName}(
+    $composableName(
         onBtnClick = {}
     )
 }
 
 @Composable
-private fun ${composableName}(
+private fun $composableName(
     modifier: Modifier = Modifier,
     onBtnClick: () -> Unit,
 ) {

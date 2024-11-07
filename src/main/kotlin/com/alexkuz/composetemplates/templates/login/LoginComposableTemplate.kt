@@ -1,9 +1,9 @@
-package com.alexkuz.composetemplates.default
+package com.alexkuz.composetemplates.templates.login
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
-object DefaultComposableTemplate: Template {
+object LoginComposableTemplate: Template {
 
     private val packageName = defaultPackageNameParameter
 
@@ -20,12 +20,20 @@ object DefaultComposableTemplate: Template {
         constraints = listOf(Constraint.KOTLIN_FUNCTION, Constraint.NONEMPTY)
     }
 
+    private val loginType = enumParameter<LoginType> {
+        name = "Login type"
+        default = LoginType.EMAIL_AND_PASSWORD
+        help = "if EMAIL_AND_PASSWORD is selected, then 2 input fields and the possibility of registration will be generated\n" +
+                "\n" +
+                "if PHONE is selected, 1 input field will be generated"
+    }
+
     override val category: Category
         get() = Category.Compose
     override val constraints: Collection<TemplateConstraint>
         get() = listOf(TemplateConstraint.Compose)
     override val description: String
-        get() = "Default template with text and button"
+        get() = "Login template with 2 different configurations"
     override val documentationUrl: String?
         get() = null
     override val formFactor: FormFactor
@@ -33,10 +41,16 @@ object DefaultComposableTemplate: Template {
     override val minSdk: Int
         get() = 23
     override val name: String
-        get() = "Default Template"
+        get() = "Login Template"
     override val recipe: Recipe
         get() = {
-            defaultComposableRecipe(it as ModuleTemplateData, composableName.value, generatePreview.value, packageName.value)
+            loginComposableRecipe(
+                it as ModuleTemplateData,
+                composableName.value,
+                generatePreview.value,
+                packageName.value,
+                loginType.value,
+            )
         }
     override val uiContexts: Collection<WizardUiContext>
         get() = listOf(WizardUiContext.MenuEntry)
@@ -48,7 +62,8 @@ object DefaultComposableTemplate: Template {
         get() = listOf(
             TextFieldWidget(composableName),
             CheckBoxWidget(generatePreview),
-            PackageNameWidget(packageName)
+            PackageNameWidget(packageName),
+            EnumWidget(loginType)
         )
 
     override fun thumb() = Thumb.NoThumb

@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.default
+package com.alexkuz.composetemplates.templates.default
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor

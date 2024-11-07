@@ -1,8 +1,8 @@
 package com.alexkuz.composetemplates.blocks
 
-fun getText() = """
+fun getText(text: String = "Example Text") = """
 Text(
-    text = "Example Text",
+    text = "$text",
     modifier = Modifier
        .fillMaxWidth()
        .padding(16.dp),
