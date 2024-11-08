@@ -1,9 +1,10 @@
-package com.alexkuz.composetemplates.templates.login
+package com.alexkuz.composetemplates.templates.register
 
+import com.alexkuz.composetemplates.templates.login.loginOrRegisterComposableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
-object LoginComposableTemplate: Template {
+object RegisterComposableTemplate: Template {
 
     private val packageName = defaultPackageNameParameter
 
@@ -20,20 +21,12 @@ object LoginComposableTemplate: Template {
         constraints = listOf(Constraint.KOTLIN_FUNCTION, Constraint.NONEMPTY)
     }
 
-    private val loginType = enumParameter<LoginType> {
-        name = "Login type"
-        default = LoginType.EMAIL_AND_PASSWORD
-        help = "if EMAIL_AND_PASSWORD is selected, then 2 input fields and the possibility of registration will be generated\n" +
-                "\n" +
-                "if PHONE is selected, 1 input field will be generated"
-    }
-
     override val category: Category
         get() = Category.Compose
     override val constraints: Collection<TemplateConstraint>
         get() = listOf(TemplateConstraint.Compose)
     override val description: String
-        get() = "Login template with 2 different configurations"
+        get() = "Register template"
     override val documentationUrl: String?
         get() = null
     override val formFactor: FormFactor
@@ -41,7 +34,7 @@ object LoginComposableTemplate: Template {
     override val minSdk: Int
         get() = 23
     override val name: String
-        get() = "Login Template"
+        get() = "Register Template"
     override val recipe: Recipe
         get() = {
             loginOrRegisterComposableRecipe(
@@ -49,7 +42,6 @@ object LoginComposableTemplate: Template {
                 composableName.value,
                 generatePreview.value,
                 packageName.value,
-                loginType.value,
             )
         }
     override val uiContexts: Collection<WizardUiContext>
@@ -63,7 +55,6 @@ object LoginComposableTemplate: Template {
             TextFieldWidget(composableName),
             CheckBoxWidget(generatePreview),
             PackageNameWidget(packageName),
-            EnumWidget(loginType)
         )
 
     override fun thumb() = Thumb.NoThumb

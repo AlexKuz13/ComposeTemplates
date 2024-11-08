@@ -5,11 +5,11 @@ import com.alexkuz.composetemplates.utils.getComposeCommonImports
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier
 import com.android.tools.idea.wizard.template.renderIf
 
-fun loginTemplate(
+fun loginOrRegisterTemplate(
     composableName: String,
     generatePreview: Boolean,
     packageName: String,
-    loginType: LoginType,
+    loginType: LoginType?,
 ): String {
     val screenCallParameters = getScreenCallParameters(loginType)
     val screenParameters = getScreenParameters(loginType)
@@ -17,6 +17,7 @@ fun loginTemplate(
     val content = when (loginType) {
         LoginType.EMAIL_AND_PASSWORD -> getEmailAndPasswordContent()
         LoginType.PHONE -> getPhoneContent()
+        null -> getRegisterContent()
     }
     return """
 package ${escapeKotlinIdentifier(packageName)}
@@ -51,7 +52,7 @@ $previewBlock
 """.trimIndent()
 }
 
-private fun getScreenCallParameters(loginType: LoginType): String {
+private fun getScreenCallParameters(loginType: LoginType?): String {
     return when (loginType) {
         LoginType.EMAIL_AND_PASSWORD -> """
             email = "", // from state
@@ -68,10 +69,23 @@ private fun getScreenCallParameters(loginType: LoginType): String {
             onSendClick = {},
             onLoginClick = {},
         """.trimIndent()
+
+        null -> """
+            email = "", // from state
+            name = "", // from state
+            password = "", // from state
+            repeatPassword = "", // from state
+            onEmailChange = {},
+            onNameChange = {},
+            onPasswordChange = {},
+            onRepeatPasswordChange = {},
+            onLoginClick = {},
+            onRegisterClick = {}, 
+        """.trimIndent()
     }
 }
 
-private fun getScreenParameters(loginType: LoginType): String {
+private fun getScreenParameters(loginType: LoginType?): String {
     return when (loginType) {
         LoginType.EMAIL_AND_PASSWORD -> """
             email: String,
@@ -90,10 +104,24 @@ private fun getScreenParameters(loginType: LoginType): String {
             onSendClick: () -> Unit,
             onLoginClick: () -> Unit,
         """.trimIndent()
+
+        null -> """
+            email: String,
+            name: String,
+            password: String,
+            repeatPassword: String,
+            modifier: Modifier = Modifier,
+            onEmailChange: (String) -> Unit,
+            onNameChange: (String) -> Unit,
+            onPasswordChange: (String) -> Unit,
+            onRepeatPasswordChange: (String) -> Unit,
+            onLoginClick: () -> Unit,
+            onRegisterClick: () -> Unit,
+        """.trimIndent()
     }
 }
 
-private fun getDefaultTemplateImports(loginType: LoginType): String {
+private fun getDefaultTemplateImports(loginType: LoginType?): String {
     val imports = mutableListOf(
         "androidx.compose.ui.text.style.TextAlign",
         "androidx.compose.ui.Alignment",
@@ -104,7 +132,7 @@ private fun getDefaultTemplateImports(loginType: LoginType): String {
         "androidx.compose.material3.TextField",
     )
     when (loginType) {
-        LoginType.EMAIL_AND_PASSWORD -> {
+        LoginType.EMAIL_AND_PASSWORD, null -> {
             imports.addAll(
                 listOf(
                     "androidx.compose.ui.text.input.PasswordVisualTransformation",
@@ -161,5 +189,46 @@ private fun getPhoneContent(): String {
         ${getTextField("phone", "onPhoneChange", "+7")}
         ${getButton("onSendClick", "Send Code")}
         ${getOutlinedButton("onLoginClick", "Login with password")}
+    """.trimIndent()
+}
+
+private fun getRegisterContent(): String {
+    return """
+        ${getText("Register")}
+        ${getTextField("email", "onEmailChange", "Email")}
+        ${getTextField("name", "onNameChange", "Name")}
+        ${
+        getTextField(
+            value = "password",
+            onValueChange = "onPasswordChange",
+            placeholder = "Password",
+            additionalFields = "visualTransformation = PasswordVisualTransformation()"
+        )
+    }
+    ${
+        getTextField(
+            value = "repeatPassword",
+            onValueChange = "onRepeatPasswordChange",
+            placeholder = "Repeat password",
+            additionalFields = "visualTransformation = PasswordVisualTransformation()"
+        )
+    }
+        ${getButton("onRegisterClick", "Register")}
+        Row {
+            Text(
+                text = "Already have an account?",
+                fontSize = 16.sp,
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Text(
+                text = "Login",
+                fontSize = 16.sp,
+                modifier = Modifier.clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = null,
+                    onClick = onLoginClick
+                ),
+            )
+        }
     """.trimIndent()
 }
