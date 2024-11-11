@@ -12,8 +12,8 @@ fun defaultTemplate(
     generatePreview: Boolean,
     packageName: String,
 ): String {
-    val previewParameters = "onBtnClick = {}"
-    val previewBlock = renderIf(generatePreview) { getPreview(composableName, previewParameters) }
+    val screenParameters = "onBtnClick = {}"
+    val previewBlock = renderIf(generatePreview) { getPreview(composableName, screenParameters) }
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
@@ -26,7 +26,7 @@ fun $composableName() {
      */
 
     $composableName(
-        onBtnClick = {}
+        $screenParameters
     )
 }
 
