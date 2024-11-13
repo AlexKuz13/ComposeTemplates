@@ -1,6 +1,7 @@
 package com.alexkuz.composetemplates.templates
 
 import com.alexkuz.composetemplates.templates.default.DefaultComposableTemplate
+import com.alexkuz.composetemplates.templates.list.ListComposableTemplate
 import com.alexkuz.composetemplates.templates.login.LoginComposableTemplate
 import com.alexkuz.composetemplates.templates.register.RegisterComposableTemplate
 import com.alexkuz.composetemplates.templates.tabs.TabsComposableTemplate
@@ -14,6 +15,7 @@ class ComposableTemplateProvider: WizardTemplateProvider() {
             LoginComposableTemplate,
             RegisterComposableTemplate,
             TabsComposableTemplate,
+            ListComposableTemplate,
         )
     }
 }
