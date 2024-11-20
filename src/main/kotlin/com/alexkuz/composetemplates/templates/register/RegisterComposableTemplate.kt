@@ -1,10 +1,11 @@
 package com.alexkuz.composetemplates.templates.register
 
-import com.alexkuz.composetemplates.templates.login.loginOrRegisterComposableRecipe
+import com.alexkuz.composetemplates.templates.common.TemplateRecipe.LoginComposableRecipe
+import com.alexkuz.composetemplates.templates.common.composableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
-object RegisterComposableTemplate: Template {
+object RegisterComposableTemplate : Template {
 
     private val packageName = defaultPackageNameParameter
 
@@ -37,11 +38,12 @@ object RegisterComposableTemplate: Template {
         get() = "Register Template"
     override val recipe: Recipe
         get() = {
-            loginOrRegisterComposableRecipe(
+            composableRecipe(
                 it as ModuleTemplateData,
                 composableName.value,
                 generatePreview.value,
                 packageName.value,
+                LoginComposableRecipe()
             )
         }
     override val uiContexts: Collection<WizardUiContext>

@@ -23,7 +23,7 @@ fun bottomSheetTemplate(
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
-${getDefaultTemplateImports()}
+${getBottomSheetTemplateImports()}
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -89,7 +89,7 @@ private fun getPreviewParameters() = """
     onCloseClick = {},
 """.trimIndent()
 
-private fun getDefaultTemplateImports(): String {
+private fun getBottomSheetTemplateImports(): String {
     val imports = mutableListOf(
         "androidx.compose.ui.text.style.TextAlign",
         "androidx.compose.ui.Alignment",

@@ -22,7 +22,7 @@ fun loginOrRegisterTemplate(
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
-${getDefaultTemplateImports(loginType)}
+${getLoginTemplateImports(loginType)}
 
 @Composable
 fun $composableName() {
@@ -121,7 +121,7 @@ private fun getScreenParameters(loginType: LoginType?): String {
     }
 }
 
-private fun getDefaultTemplateImports(loginType: LoginType?): String {
+private fun getLoginTemplateImports(loginType: LoginType?): String {
     val imports = mutableListOf(
         "androidx.compose.ui.text.style.TextAlign",
         "androidx.compose.ui.Alignment",

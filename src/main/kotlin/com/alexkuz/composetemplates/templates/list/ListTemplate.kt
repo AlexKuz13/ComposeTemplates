@@ -1,6 +1,7 @@
 package com.alexkuz.composetemplates.templates.list
 
 import com.alexkuz.composetemplates.blocks.*
+import com.alexkuz.composetemplates.utils.getArgSymbol
 import com.alexkuz.composetemplates.utils.getComposeCommonImports
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier
 import com.android.tools.idea.wizard.template.renderIf
@@ -21,7 +22,7 @@ fun listTemplate(
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
-${getDefaultTemplateImports(generateSwipeRefresh)}
+${getListTemplateImports(generateSwipeRefresh)}
 
 class Item(
     val id: Int,
@@ -177,7 +178,7 @@ private fun getItemBlock() = """
     }
 """.trimIndent()
 
-private fun getDefaultTemplateImports(generateSwipeRefresh: Boolean): String {
+private fun getListTemplateImports(generateSwipeRefresh: Boolean): String {
     val imports = mutableListOf(
         "androidx.compose.foundation.layout.WindowInsets",
         "androidx.compose.foundation.layout.asPaddingValues",
@@ -204,5 +205,3 @@ private fun getDefaultTemplateImports(generateSwipeRefresh: Boolean): String {
     }
     return getComposeCommonImports(imports)
 }
-
-private fun getArgSymbol() = "$"

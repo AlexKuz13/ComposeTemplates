@@ -1,5 +1,7 @@
 package com.alexkuz.composetemplates.templates.login
 
+import com.alexkuz.composetemplates.templates.common.TemplateRecipe.LoginComposableRecipe
+import com.alexkuz.composetemplates.templates.common.composableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
@@ -44,12 +46,12 @@ object LoginComposableTemplate: Template {
         get() = "Login Template"
     override val recipe: Recipe
         get() = {
-            loginOrRegisterComposableRecipe(
+            composableRecipe(
                 it as ModuleTemplateData,
                 composableName.value,
                 generatePreview.value,
                 packageName.value,
-                loginType.value,
+                LoginComposableRecipe(loginType.value)
             )
         }
     override val uiContexts: Collection<WizardUiContext>

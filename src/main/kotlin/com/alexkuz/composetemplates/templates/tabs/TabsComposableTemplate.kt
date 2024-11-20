@@ -1,9 +1,11 @@
 package com.alexkuz.composetemplates.templates.tabs
 
+import com.alexkuz.composetemplates.templates.common.TemplateRecipe.TabsComposableRecipe
+import com.alexkuz.composetemplates.templates.common.composableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
-object TabsComposableTemplate: Template {
+object TabsComposableTemplate : Template {
 
     private val packageName = defaultPackageNameParameter
 
@@ -36,7 +38,13 @@ object TabsComposableTemplate: Template {
         get() = "Tabs Template"
     override val recipe: Recipe
         get() = {
-            tabsComposableRecipe(it as ModuleTemplateData, composableName.value, generatePreview.value, packageName.value)
+            composableRecipe(
+                it as ModuleTemplateData,
+                composableName.value,
+                generatePreview.value,
+                packageName.value,
+                TabsComposableRecipe
+            )
         }
     override val uiContexts: Collection<WizardUiContext>
         get() = listOf(WizardUiContext.MenuEntry)

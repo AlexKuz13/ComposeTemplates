@@ -1,11 +1,11 @@
-package com.alexkuz.composetemplates.templates.default
+package com.alexkuz.composetemplates.templates.calendar
 
-import com.alexkuz.composetemplates.templates.common.TemplateRecipe.DefaultComposableRecipe
+import com.alexkuz.composetemplates.templates.common.TemplateRecipe.CalendarComposableRecipe
 import com.alexkuz.composetemplates.templates.common.composableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
-object DefaultComposableTemplate : Template {
+object CalendarComposableTemplate : Template {
 
     private val packageName = defaultPackageNameParameter
 
@@ -27,7 +27,7 @@ object DefaultComposableTemplate : Template {
     override val constraints: Collection<TemplateConstraint>
         get() = listOf(TemplateConstraint.Compose)
     override val description: String
-        get() = "Default template with text and button"
+        get() = "Calendar template with DatePickerDialog"
     override val documentationUrl: String?
         get() = null
     override val formFactor: FormFactor
@@ -35,7 +35,7 @@ object DefaultComposableTemplate : Template {
     override val minSdk: Int
         get() = 23
     override val name: String
-        get() = "Default Template"
+        get() = "Calendar Template"
     override val recipe: Recipe
         get() = {
             composableRecipe(
@@ -43,7 +43,7 @@ object DefaultComposableTemplate : Template {
                 composableName.value,
                 generatePreview.value,
                 packageName.value,
-                DefaultComposableRecipe
+                CalendarComposableRecipe
             )
         }
     override val uiContexts: Collection<WizardUiContext>

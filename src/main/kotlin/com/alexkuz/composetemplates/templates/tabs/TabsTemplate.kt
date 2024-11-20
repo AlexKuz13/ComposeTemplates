@@ -16,7 +16,7 @@ fun tabsTemplate(
     return """
 package ${escapeKotlinIdentifier(packageName)}
         
-${getDefaultTemplateImports()}
+${getTabsTemplateImports()}
 
 class TabsItem(
     val title: String,
@@ -84,7 +84,7 @@ $previewBlock
 """.trimIndent()
 }
 
-private fun getDefaultTemplateImports() = getComposeCommonImports(
+private fun getTabsTemplateImports() = getComposeCommonImports(
     listOf(
         "androidx.compose.ui.text.style.TextAlign",
         "androidx.compose.foundation.layout.Arrangement",

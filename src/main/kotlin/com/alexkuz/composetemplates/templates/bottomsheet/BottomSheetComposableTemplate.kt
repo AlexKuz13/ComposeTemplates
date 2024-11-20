@@ -1,5 +1,7 @@
 package com.alexkuz.composetemplates.templates.bottomsheet
 
+import com.alexkuz.composetemplates.templates.common.TemplateRecipe.BottomSheetComposableRecipe
+import com.alexkuz.composetemplates.templates.common.composableRecipe
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.defaultPackageNameParameter
 
@@ -36,11 +38,12 @@ object BottomSheetComposableTemplate : Template {
         get() = "TopBar and BottomSheet Template"
     override val recipe: Recipe
         get() = {
-            bottomSheetComposableRecipe(
+            composableRecipe(
                 it as ModuleTemplateData,
                 composableName.value,
                 generatePreview.value,
                 packageName.value,
+                BottomSheetComposableRecipe,
             )
         }
     override val uiContexts: Collection<WizardUiContext>
