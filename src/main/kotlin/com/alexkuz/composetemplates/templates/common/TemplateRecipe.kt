@@ -7,6 +7,7 @@ sealed class TemplateRecipe {
     data object TabsComposableRecipe : TemplateRecipe()
     data object BottomSheetComposableRecipe : TemplateRecipe()
     data object CalendarComposableRecipe : TemplateRecipe()
+    data object SettingsComposableRecipe : TemplateRecipe()
     data class LoginComposableRecipe(val loginType: LoginType? = null) : TemplateRecipe()
     data class ListComposableRecipe(val generateSwipeRefresh: Boolean) : TemplateRecipe()
 }
