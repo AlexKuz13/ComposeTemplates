@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.blocks
+package com.alexkuz.composetemplates.templates.blocks
 
 fun getPreview(composableName: String, parameters: String) = """
 @Preview(showBackground = true)

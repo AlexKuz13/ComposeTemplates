@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.blocks
+package com.alexkuz.composetemplates.templates.blocks
 
 fun getButton(onClick: String = "onBtnClick", text: String = "Button") = getButtonInternal(onClick, text)
 

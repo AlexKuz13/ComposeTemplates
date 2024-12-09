@@ -1,6 +1,6 @@
 package com.alexkuz.composetemplates.templates.login
 
-import com.alexkuz.composetemplates.blocks.*
+import com.alexkuz.composetemplates.templates.blocks.*
 import com.alexkuz.composetemplates.utils.getComposeCommonImports
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier
 import com.android.tools.idea.wizard.template.renderIf
@@ -157,12 +157,14 @@ private fun getEmailAndPasswordContent(): String {
     return """
         ${getText("Login")}
         ${getTextField("email", "onEmailChange", "Email")}
-        ${getTextField(
+        ${
+        getTextField(
             value = "password",
             onValueChange = "onPasswordChange",
             placeholder = "Password",
             additionalFields = "visualTransformation = PasswordVisualTransformation()"
-        )}
+        )
+    }
         ${getButton("onLoginClick", "Login")}
         Row {
             Text(

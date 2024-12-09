@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.blocks
+package com.alexkuz.composetemplates.templates.blocks
 
 fun getText(text: String = "Example Text") = """
 Text(

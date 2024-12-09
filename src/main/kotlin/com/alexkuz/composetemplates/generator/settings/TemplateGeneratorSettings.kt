@@ -68,7 +68,7 @@ class TemplateGeneratorSettings(private val project: Project) : Configurable, Do
         isModified = false
     }
 
-    override fun getDisplayName() = "Template Generator Settings"
+    override fun getDisplayName() = "Template Compose AI Generator"
 
     override fun insertUpdate(e: DocumentEvent?) {
         isModified = true

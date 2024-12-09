@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.blocks
+package com.alexkuz.composetemplates.templates.blocks
 
 import com.android.tools.idea.wizard.template.renderIf
 

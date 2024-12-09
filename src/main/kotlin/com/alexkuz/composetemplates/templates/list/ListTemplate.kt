@@ -1,6 +1,6 @@
 package com.alexkuz.composetemplates.templates.list
 
-import com.alexkuz.composetemplates.blocks.*
+import com.alexkuz.composetemplates.templates.blocks.getPreview
 import com.alexkuz.composetemplates.utils.getArgSymbol
 import com.alexkuz.composetemplates.utils.getComposeCommonImports
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier

@@ -1,8 +1,8 @@
 package com.alexkuz.composetemplates.templates.calendar
 
-import com.alexkuz.composetemplates.blocks.getButton
-import com.alexkuz.composetemplates.blocks.getPreview
-import com.alexkuz.composetemplates.blocks.getText
+import com.alexkuz.composetemplates.templates.blocks.getButton
+import com.alexkuz.composetemplates.templates.blocks.getPreview
+import com.alexkuz.composetemplates.templates.blocks.getText
 import com.alexkuz.composetemplates.utils.getArgSymbol
 import com.alexkuz.composetemplates.utils.getComposeCommonImports
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier
