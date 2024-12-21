@@ -29,23 +29,31 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable instance="com.alexkuz.composetemplates.generator.settings.TemplateGeneratorSettings"
-                             displayName="Template Generator Settings"/>
+                             displayName="Template Compose AI Generator"/>
     </extensions>
 
     <extensions defaultExtensionNs="com.android">
-        <tools.idea.wizard.template.wizardTemplateProvider implementation="com.alexkuz.composetemplates.templates.ComposableTemplateProvider" />
+        <tools.idea.wizard.template.wizardTemplateProvider
+                implementation="com.alexkuz.composetemplates.templates.ComposableTemplateProvider"/>
     </extensions>
 
     <actions>
         <group
-                id="MyDemoActionGroup"
-                description="Demo action group">
+                id="TemplateGeneratorActionGroup"
+                description="Template compose generator"
+                text="Template Compose Generator"
+                popup="true">
             <action
-                    id="com.alexkuz.composetemplates.MyDemoAction"
-                    class="com.alexkuz.composetemplates.DemoAction"
-                    text="Demo Action"
-                    description="Demo action example"/>
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+                    id="com.alexkuz.composetemplates.TemplateGeneratorAction"
+                    class="com.alexkuz.composetemplates.generator.action.TemplateGeneratorAction"
+                    text="Constructor Generator"
+                    description="Template Compose constructor generator"/>
+            <action
+                    id="com.alexkuz.composetemplates.TemplateAIGeneratorAction"
+                    class="com.alexkuz.composetemplates.generator.action.TemplateAIGeneratorAction"
+                    text="AI Generator"
+                    description="Template Compose AI generator"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
         </group>
     </actions>
 </idea-plugin>
