@@ -1,6 +1,6 @@
-package com.alexkuz.composetemplates.generator.service
+package com.alexkuz.composetemplates.generator.ai.service
 
-import com.alexkuz.composetemplates.generator.model.AuthState
+import com.alexkuz.composetemplates.generator.ai.model.AuthState
 import com.intellij.openapi.components.*
 import com.intellij.openapi.project.Project
 

@@ -16,8 +16,9 @@ object DirectoryHelper {
         project: Project,
         packageName: String,
         composableName: String,
-        content: String,
+        content: String?,
     ): String? {
+        content ?: return DEFAULT_ERROR
         if (packageName.isBlank() || packageName.endsWith(".")) return "Невалидный package"
         val packagePath = packageName.replace('.', '/')
         val basePath = project.basePath ?: return DEFAULT_ERROR

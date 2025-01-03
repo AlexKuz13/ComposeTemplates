@@ -1,7 +1,7 @@
-package com.alexkuz.composetemplates.generator.settings
+package com.alexkuz.composetemplates.generator.ai.settings
 
-import com.alexkuz.composetemplates.generator.model.AuthState
-import com.alexkuz.composetemplates.generator.service.AuthService
+import com.alexkuz.composetemplates.generator.ai.model.AuthState
+import com.alexkuz.composetemplates.generator.ai.service.AuthService
 import com.alexkuz.composetemplates.utils.lazyUnsafe
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.project.Project

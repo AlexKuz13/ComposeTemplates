@@ -1,4 +1,4 @@
-package com.alexkuz.composetemplates.generator.model
+package com.alexkuz.composetemplates.generator.ai.model
 
 data class AuthState(
     var token: String = "",

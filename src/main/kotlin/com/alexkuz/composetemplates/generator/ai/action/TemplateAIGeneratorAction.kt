@@ -1,6 +1,8 @@
-package com.alexkuz.composetemplates.generator.action
+package com.alexkuz.composetemplates.generator.ai.action
 
-import com.alexkuz.composetemplates.generator.service.AuthService
+import com.alexkuz.composetemplates.generator.ai.injector.TemplateGeneratorInjectorImpl
+import com.alexkuz.composetemplates.generator.ai.service.AuthService
+import com.alexkuz.composetemplates.generator.ai.view.TemplateAIGeneratorForm
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -8,7 +10,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 class TemplateAIGeneratorAction: AnAction() {
 
     override fun actionPerformed(p0: AnActionEvent) {
-        // TODO:  
+        val dialog = TemplateAIGeneratorForm(p0.project!!, TemplateGeneratorInjectorImpl())
+        dialog.show()
     }
 
     override fun update(e: AnActionEvent) {

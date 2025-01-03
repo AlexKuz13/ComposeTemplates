@@ -28,7 +28,7 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <projectConfigurable instance="com.alexkuz.composetemplates.generator.settings.TemplateGeneratorSettings"
+        <projectConfigurable instance="com.alexkuz.composetemplates.generator.ai.settings.TemplateGeneratorSettings"
                              displayName="Template Compose AI Generator"/>
     </extensions>
 
@@ -50,7 +50,7 @@
                     description="Template Compose constructor generator"/>
             <action
                     id="com.alexkuz.composetemplates.TemplateAIGeneratorAction"
-                    class="com.alexkuz.composetemplates.generator.action.TemplateAIGeneratorAction"
+                    class="com.alexkuz.composetemplates.generator.ai.action.TemplateAIGeneratorAction"
                     text="AI Generator"
                     description="Template Compose AI generator"/>
             <add-to-group group-id="ToolsMenu" anchor="last"/>
