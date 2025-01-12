@@ -75,7 +75,11 @@ private fun getImports(generatorModel: TemplateGeneratorModel): String {
             }
 
             ComposeElements.IMAGE -> {
-                listOf("androidx.compose.foundation.Image")
+                listOf(
+                    "androidx.compose.foundation.Image",
+                    "android.graphics.Bitmap",
+                    "androidx.compose.ui.graphics.asImageBitmap",
+                )
             }
 
             ComposeElements.SLIDER -> {

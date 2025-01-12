@@ -39,8 +39,8 @@ fun RecipeExecutor.composableRecipe(
 
         is TemplateRecipe.ListComposableRecipe -> listTemplate(
             composableName,
-            generatePreview,
             templateRecipe.generateSwipeRefresh,
+            generatePreview,
             packageName
         )
     }
