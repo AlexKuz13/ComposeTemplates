@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.alexkuz"
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -31,6 +31,7 @@ tasks {
     patchPluginXml {
         sinceBuild.set("232")
         untilBuild.set("242.*")
+        changeNotes = "This is the first version of the plugin."
     }
 
     signPlugin {
