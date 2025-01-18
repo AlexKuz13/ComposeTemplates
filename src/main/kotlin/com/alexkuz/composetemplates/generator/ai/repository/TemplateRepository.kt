@@ -17,17 +17,25 @@ class TemplateRepositoryImpl(
     authState: AuthState,
 ) : TemplateRepository {
 
-    private val modelUri = "gpt://${authState.catalogId}/yandexgpt-lite"
+    private val modelUri = "gpt://${authState.catalogId}/yandexgpt-lite/latest@tamr7jitqd7472clp6f2d"
 
     override fun getTemplate(request: String): Single<String?> {
         return templateApi.getTemplate(
             TemplateRequest(
                 modelUri = modelUri,
-                messages = listOf(Message(text = request))
+                messages = listOf(
+                    Message(role = SYSTEM_ROLE, text = SYSTEM_MSG),
+                    Message(text = request)
+                )
             )
         )
             .map { it.result.alternatives.firstOrNull()?.message?.text }
             .subscribeOn(Schedulers.io())
             .observeOn(SwingSchedulers.edt())
+    }
+
+    private companion object {
+        private const val SYSTEM_ROLE = "system"
+        private const val SYSTEM_MSG = "Ты генератор простых экранов на Jetpack Compose.\nТы печатаещь только код."
     }
 }

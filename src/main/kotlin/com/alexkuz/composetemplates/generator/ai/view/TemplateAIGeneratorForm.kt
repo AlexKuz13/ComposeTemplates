@@ -74,10 +74,12 @@ class TemplateAIGeneratorForm(
         val packageName = packageNameField.text
         val composableName = composableNameField.text
         progressBar.isVisible = true
-        repository.getTemplate(requestField.text)
+        val requestText = requestField.text + ". Его название $composableName"
+        repository.getTemplate(requestText)
             .subscribe(
                 { content ->
-                    val error = DirectoryHelper.generateScreenOrError(project, packageName, composableName, content)
+                    val contentWithPackage = "package $packageName\n\n$content"
+                    val error = DirectoryHelper.generateScreenOrError(project, packageName, composableName, contentWithPackage)
                     if (error != null) {
                         progressBar.isVisible = false
                         Messages.showMessageDialog(project, error, "Error", Messages.getErrorIcon())
@@ -92,6 +94,6 @@ class TemplateAIGeneratorForm(
     }
 
     private companion object {
-        private const val HINT = "Enter your request here. Ex: Screen with with two text fields and a button vertically"
+        private const val HINT = "Введите свой запрос сюда. Пример: Экран с двумя кнопками, расположенными по вертикали"
     }
 }
