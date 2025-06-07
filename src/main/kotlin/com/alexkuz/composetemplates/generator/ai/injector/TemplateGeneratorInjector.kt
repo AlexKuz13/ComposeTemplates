@@ -12,6 +12,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 
 interface TemplateGeneratorInjector {
     fun authState(project: Project): AuthState
@@ -21,7 +22,7 @@ interface TemplateGeneratorInjector {
 
 class TemplateGeneratorInjectorImpl : TemplateGeneratorInjector {
 
-    override fun authState(project: Project) = AuthService.getInstance(project).state
+    override fun authState(project: Project) = AuthService.getInstance(project)?.state ?: AuthState()
 
     override fun templateApi(project: Project): TemplateApi {
         val moshi = Moshi.Builder()
@@ -38,6 +39,8 @@ class TemplateGeneratorInjectorImpl : TemplateGeneratorInjector {
                     .build()
                 chain.proceed(request)
             }
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
         return Retrofit.Builder()
             .baseUrl("https://llm.api.cloud.yandex.net")

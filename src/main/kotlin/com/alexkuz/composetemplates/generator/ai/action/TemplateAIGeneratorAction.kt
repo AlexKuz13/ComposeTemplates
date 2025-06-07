@@ -1,6 +1,7 @@
 package com.alexkuz.composetemplates.generator.ai.action
 
 import com.alexkuz.composetemplates.generator.ai.injector.TemplateGeneratorInjectorImpl
+import com.alexkuz.composetemplates.generator.ai.model.AuthState
 import com.alexkuz.composetemplates.generator.ai.service.AuthService
 import com.alexkuz.composetemplates.generator.ai.view.TemplateAIGeneratorForm
 import com.intellij.openapi.actionSystem.ActionUpdateThread
@@ -15,7 +16,7 @@ class TemplateAIGeneratorAction: AnAction() {
     }
 
     override fun update(e: AnActionEvent) {
-        val state = AuthService.getInstance(e.project!!).state
+        val state = AuthService.getInstance(e.project!!)?.state ?: AuthState()
         e.presentation.isEnabled = state.token.isNotBlank() && state.catalogId.isNotBlank()
     }
 

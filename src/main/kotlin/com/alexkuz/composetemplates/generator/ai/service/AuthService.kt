@@ -19,6 +19,6 @@ class AuthService: PersistentStateComponent<AuthState> {
     }
 
     companion object {
-        fun getInstance(project: Project): AuthService = project.service()
+        fun getInstance(project: Project): AuthService? = project.serviceOrNull<AuthService>()
     }
 }

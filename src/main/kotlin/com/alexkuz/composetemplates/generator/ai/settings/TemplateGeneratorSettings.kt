@@ -20,7 +20,7 @@ import javax.swing.event.DocumentListener
 
 class TemplateGeneratorSettings(private val project: Project) : Configurable, DocumentListener {
 
-    private val state: AuthState by lazyUnsafe { AuthService.getInstance(project).state }
+    private val state: AuthState by lazyUnsafe { AuthService.getInstance(project)?.state ?: AuthState() }
 
     private var isModified: Boolean = false
 
@@ -64,7 +64,7 @@ class TemplateGeneratorSettings(private val project: Project) : Configurable, Do
         state.token = String(tokenField.password)
         state.catalogId = catalogField.text
 
-        AuthService.getInstance(project).loadState(state)
+        AuthService.getInstance(project)?.loadState(state)
         isModified = false
     }
 
